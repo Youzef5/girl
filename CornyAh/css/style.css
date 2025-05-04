@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+
+* {
+    font-family: 'Poppins', cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: azure;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+}
+
+.greetings {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 600;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    
+}
+
+.greetings > .be-happy {
+    animation: glow 0.5s ease-in-out infinite;
+    display: inline-block;
+}
+
+@keyframes glow {
+    0%, 100% {
+        color: #fff;
+        text-shadow: 0 0 12px #BF40BF, 0 0 50px #BF40BF, 0 0 100px #BF40BF;
+    }
+    10%, 90% {
+        color: #111;
+        text-shadow: none;
+    }
+}
+
+/* Simplified animation delay with a loop pattern */
+.greetings > span {
+    animation-delay: calc(0.1s * var(--i));
+}
+
+.description {
+    max-width: min(90%, 600px);
+    margin: 20px auto;
+    text-align: center;
+    font-size: clamp(0.9rem, 3vw, 1.125rem);
+    line-height: 1.6;
+    color: #fff;
+    padding: 0 10px;
+}
+
+.button {
+    margin: 20px 0;
+}
+
+.button a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: red;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.button a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.frame {
+    background-color: #ddc;
+    border: solid 5vmin #eee;
+    border-bottom-color: #fff;
+    border-left-color: #eee;
+    border-right-color: #eee;
+    border-top-color: #ddd;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25) inset, 
+                0 5px 10px 5px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    margin: 5vh auto;
+    height: auto;
+    max-height: 70vh;
+    aspect-ratio: 3/4;
+    padding: 4vmin;
+    position: relative;
+    text-align: center;
+    max-width: 90%;
+}
+
+.frame:before {
+    border-radius: 2px;
+    bottom: -2vmin;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25) inset;
+    content: "";
+    left: -2vmin;
+    position: absolute;
+    right: -2vmin;
+    top: -2vmin;
+}
+
+.frame:after {
+    border-radius: 2px;
+    bottom: -2.5vmin;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+    content: "";
+    left: -2.5vmin;
+    position: absolute;
+    right: -2.5vmin;
+    top: -2.5vmin;
+}
+
+.frame img {
+    border: solid 2px;
+    border-bottom-color: #ffe;
+    border-left-color: #eed;
+    border-right-color: #eed;
+    border-top-color: #ccb;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+    .greetings {
+        gap: 0.3rem;
+    }
+    
+    .frame {
+        margin: 3vh auto;
+        max-height: 60vh;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .greetings {
+        font-size: 1.2rem;
+        gap: 0.2rem;
+    }
+    
+    .description {
+        font-size: 0.8rem;
+    }
+    
+    .button a {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+    
+    .frame {
+        max-height: 50vh;
+        padding: 3vmin;
+    }
+}
